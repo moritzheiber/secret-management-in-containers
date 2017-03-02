@@ -626,10 +626,15 @@ class: left, middle, backgroundblue
 - And finally, as I just mentioned, Vault is capable of submitting its internal auditing log to numerous aggregation instances, be it a flat file, writing it into syslog, or sending it to a local or remote socket; it's all possible
 
 ---
+
+### github.com/moritzheiber/secret-management-in-containers
+
+---
 layout: true
-class: center, middle
+class: center, middle, backgroundblue
 
 .footnote[![tw-logo](images/TW Colour Logos_trans_white.png)]
+
 ---
 background-image: url(images/container-lock.png)
 
