@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Secret management in containers</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+      @import url(http://fonts.googleapis.com/css?family=Open+Sans:900,700,800,400,300);
+      body {
+        font-family: 'Open Sans';
+        color: #efefef;
+      }
+      a:link, a:visited, a:hover, a:active {
+        color: #efefef;
+      }
+      .remark-slide-content {
+        background-color: black;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: 900;
+        letter-spacing: -0.05em;
+        text-shadow: 2px 2px #121212;
+      }
+      h1 {
+        text-transform: uppercase;
+      }
+      .decap h1 {
+        text-transform:none !important;
+      }
+      .speech-bubble {
+        position: relative;
+        display: inline-block;
+      }
+      .speech-bubble img {
+        position: absolute;
+        height:auto;
+        width: 20%;
+        transform: rotate(5deg);
+        top: -70px;
+        left: 198px;
+      }
+      .panda-bad-time {
+        position: absolute;
+        right: 200px;
+        bottom: 100px;
+      }
+      .panda-bad-time img {
+        border-radius: 10px;
+      }
+      .quote {
+        background-color: #efefef;
+        color: #121212;
+        text-align: justify;
+        border: 1px solid white;
+        box-shadow: 1px 1px 10px #efefef;
+        font-size: 1.5em;
+        padding: 0.5em;
+      }
+      .citation {
+        font-size: 0.5em;
+        position: absolute;
+        bottom: 10px;
+        left: 200px;
+      }
+      .app-logos {
+        position: absolute;
+        float: right;
+        top: 100px;
+        right: 200px;
+        background-color: rgba(240,240,240,0.3);
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+      }
+      .app-logos img {
+        display: block;
+        max-height:100px;
+        margin: 15px auto;
+      }
+      .ohno img {
+        border: 1px solid #efefef;
+        border-radius: 10px;
+        position: absolute;
+        bottom: 75px;
+        right: 400px;
+        max-width: 200px;
+      }
+      .backgroundblue { background-color: rgb(26,115,186); }
+      .backgroundgreen { background-color: rgb(17,170,88); }
+      .backgroundwhite { background-color: #FFF; }
+      .image img {
+        max-width: 70%;
+        border-radius: 10px;
+        border: 1px solid #efefef;
+        height: auto;
+      }
+      .logo img {
+        max-height:200px;
+        width:auto;
+      }
+      .logos figure {
+        display: inline-block;
+      }
+      .logos figure img {
+        max-height:200px;
+        width:auto;
+      }
+      .logos figure figcaption {
+        text-align:center;
+        font-size: 2em;
+        font-weight: bolder;
+      }
+      .logos h1 {
+        display: inline-block;
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+      .logos {
+        max-height:75%;
+        max-width: 80%;
+        background-color: rgba(240,240,240,0.3);
+        border-radius: 10px;
+        margin: 0 auto;
+      }
+      .image-smaller img {
+        border-radius: 10px;
+        border: 1px solid #efefef;
+        max-width: 100%;
+        max-height: 400px;
+      }
+      .header {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+      }
+      .footnote {
+        position: absolute;
+        left: 5px;
+        bottom: 0px;
+      }
+      .lower h1 {
+        margin-top: 4em;
+      }
+      .footnote img {
+        max-width: 200px;
+      }
+      .dark-bg {
+        background:rgba(120,120,120,0.8);
+        padding: 10px;
+        margin: 0 18% 0 18%;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        ratio: '16:9',
+        sourceUrl: 'markdown.md.gen',
+        highlightStyle: 'solarized-dark',
+        countIncrementalSlides: false
+      });
+    </script>
+  </body>
+</html>

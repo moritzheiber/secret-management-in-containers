@@ -1,0 +1,5 @@
+<html>
+  <body>
+    <h1>The secret is {{ with secret "secret/some/secret" }}{{ .Data.output }}{{ end }}</h1>
+  </body>
+</html>

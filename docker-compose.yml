@@ -1,0 +1,13 @@
+vault:
+  image: vault
+  container_name: "vault"
+  command: server -dev -dev-root-token-id=token
+  ports:
+    - "18200:8200"
+
+consul-template:
+  image: consul-template
+  ports:
+    - "2015:2015"
+  links:
+    - vault
