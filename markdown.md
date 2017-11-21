@@ -596,9 +596,9 @@ class: left, middle, backgroundblue
 ---
 
 ## Different auth backends
-### GitHub, RADIUS, EC2 ...
+### GitHub, EC2, GCE, Azure, RADIUS  ...
 ## Different secret backends
-### PKI, MySQL, Cassandra, SSH ...
+### PKI, AWS KMS, MySQL, Cassandra, SSH ...
 ## Different audit backends
 ### File, Syslog, socket
 
@@ -614,6 +614,7 @@ class: left, middle, backgroundblue
 - You can use popular services such as GitHub for user authentication, including groups and organization level support
 - You can also use established identity providers such as RADIUS or LDAP
 - And if you're running on AWS, Vault can use each instance's IAM profile to securely authenticateapps running on them and provide secrets without having to use a side channel
+- The same goes for GCE and Azure: Using the platforms trust to identify and assign roles which can access secret data
 
 - Have you ever set up a full fledged PKI? It's a freaking pain in the ass. Well, Vault can do this for you, with all the bells and whistles you need!
   - root-cert management, intermediate-certs, fully-managed root or provided root, client or servers certs, OSP, OSCP, certificate expiration/revocation .. it's all in there
@@ -640,5 +641,5 @@ background-image: url(images/container-lock.png)
 
 .dark-bg[
 # Thanks!
-<i class="fa fa-twitter"></i> @moritzheiber | <i class="fa fa-envelope"></i> mheiber@thoughtworks.com | <i class="fa fa-home"></i> heiber.im
+<img class="mastodon-logo" src="images/mastodon-icon.svg" /> moritzheiber@mastodon.social | <i class="fa fa-envelope"></i> mheiber@thoughtworks.com | <i class="fa fa-home"></i> heiber.im
 ]

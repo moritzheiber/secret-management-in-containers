@@ -23,7 +23,7 @@ function task_run {
   vault write \
     /secret/some/secret \
     output="not secret" \
-    ttl=1m
+    ttl=20s
 
   docker-compose up consul-template
 }
@@ -37,13 +37,13 @@ function task_build_mh {
 }
 
 function task_write_secret {
-  local path="$1"
-  local secret="$2"
+  local secret="${1}"
+  local path="${2:-/secret/some/secret}"
 
   VAULT_ADDR="http://localhost:18200"
   VAULT_TOKEN="token"
 
-  vault write "${1}" "${2}" ttl=1m
+  vault write "${path}" "output=${secret}" ttl=1m
 }
 
 function task_usage {
