@@ -14,18 +14,20 @@ function task_run {
   trap ensure_teardown INT TERM EXIT
 
   docker-compose up -d vault
-  vault token-create \
-    -id=renewable \
+  sleep 1
+
+  TOKEN="$(vault token create \
     -renewable=true \
     -ttl=1m \
-    -policy=root
+    -policy=root \
+    -field=token)"
 
-  vault write \
-    /secret/some/secret \
+  vault kv put \
+    secret/some/secret \
     output="not secret" \
     ttl=20s
 
-  docker-compose up consul-template
+  VAULT_TOKEN="${TOKEN}" docker-compose up consul-template
 }
 
 function task_build {
@@ -38,12 +40,12 @@ function task_build_mh {
 
 function task_write_secret {
   local secret="${1}"
-  local path="${2:-/secret/some/secret}"
+  local path="${2:-secret/some/secret}"
 
   VAULT_ADDR="http://localhost:18200"
   VAULT_TOKEN="token"
 
-  vault write "${path}" "output=${secret}" ttl=1m
+  vault kv put "${path}" "output=${secret}" ttl=1m
 }
 
 function task_usage {

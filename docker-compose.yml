@@ -7,6 +7,8 @@ vault:
 
 consul-template:
   image: consul-template
+  environment:
+    VAULT_TOKEN: ${VAULT_TOKEN}
   ports:
     - "2015:2015"
   links:
